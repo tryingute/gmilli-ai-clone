@@ -3,21 +3,15 @@
 import Link from 'next/link';
 import { useState } from 'react';
 
-export default function SignUpPage() {
+export default function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!email || !password || !confirmPassword) {
-      alert('Please fill in all fields.');
-      return;
-    }
-
-    if (password !== confirmPassword) {
-      alert('Passwords do not match.');
+    if (!email.trim() || !password.trim()) {
+      alert('Please enter both email and password.');
       return;
     }
 
@@ -29,26 +23,23 @@ export default function SignUpPage() {
       <nav className="mx-auto mb-8 max-w-5xl rounded-xl border border-slate-700 bg-slate-900/80 px-6 py-4">
         <div className="flex items-center justify-between">
           <Link href="/" className="text-2xl font-bold text-sky-400">
-            Gmilli AI
+            Deriv Index Trader
           </Link>
           <div className="flex items-center gap-4">
             <Link href="/" className="text-slate-300 hover:text-sky-300">Home</Link>
-            <Link href="/login" className="rounded-lg bg-sky-600 px-4 py-2 text-white hover:bg-sky-500">
-              Login
+            <Link href="/signup" className="rounded-lg bg-emerald-600 px-4 py-2 text-white hover:bg-emerald-500">
+              Sign Up
             </Link>
           </div>
         </div>
       </nav>
 
       <div className="mx-auto max-w-md rounded-2xl border border-slate-700 bg-slate-900/80 p-8 shadow-glow">
-        <div className="mb-6 text-center">
-          <h1 className="text-3xl font-bold text-sky-400">🚀 Create Account</h1>
-          <p className="mt-2 text-sm text-slate-400">Join Gmilli AI and start trading with AI-powered assistance.</p>
-        </div>
+        <h1 className="mb-6 text-center text-3xl font-bold text-sky-400">🚀 Login</h1>
 
         <div className="mb-6 rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-4 text-sm text-emerald-300">
-          <div className="mb-1 font-semibold">🚀 Full Authentication & Profile Creation</div>
-          <div>Real signup flow with validation and dashboard onboarding.</div>
+          <div className="mb-1 font-semibold">✅ Deriv Index Access Ready</div>
+          <div>Access the index monitor and strategy dashboard.</div>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-5">
@@ -58,8 +49,8 @@ export default function SignUpPage() {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full rounded-lg border border-slate-600 bg-slate-800 px-4 py-3 text-white outline-none placeholder:text-slate-400 focus:border-sky-500"
-              placeholder="Enter your email address"
+              className="w-full rounded-lg border border-slate-600 bg-slate-800 px-4 py-3 text-white outline-none ring-0 placeholder:text-slate-400 focus:border-sky-500"
+              placeholder="Enter your email"
               required
             />
           </div>
@@ -71,43 +62,24 @@ export default function SignUpPage() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               className="w-full rounded-lg border border-slate-600 bg-slate-800 px-4 py-3 text-white outline-none placeholder:text-slate-400 focus:border-sky-500"
-              placeholder="Create a password"
+              placeholder="Enter your password"
               required
             />
           </div>
 
-          <div>
-            <label className="mb-2 block text-sm text-slate-300">Confirm Password</label>
-            <input
-              type="password"
-              value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
-              className="w-full rounded-lg border border-slate-600 bg-slate-800 px-4 py-3 text-white outline-none placeholder:text-slate-400 focus:border-sky-500"
-              placeholder="Confirm your password"
-              required
-            />
-          </div>
-
-          <button type="submit" className="w-full rounded-lg bg-emerald-600 px-4 py-3 font-semibold text-white transition hover:bg-emerald-500">
-            📧 Create Account
+          <button type="submit" className="w-full rounded-lg bg-sky-600 px-4 py-3 font-semibold text-white transition hover:bg-sky-500">
+            🚀 Login
           </button>
         </form>
 
         <div className="mt-6 grid grid-cols-2 gap-3">
           <Link href="/analyzer" className="rounded-lg bg-violet-600 px-3 py-2 text-center text-sm font-medium text-white hover:bg-violet-500">
-            ✅ Config Test
+            📊 Analyzer
           </Link>
-          <Link href="/login" className="rounded-lg bg-sky-600 px-3 py-2 text-center text-sm font-medium text-white hover:bg-sky-500">
-            🔐 Login
+          <Link href="/signup" className="rounded-lg bg-emerald-600 px-3 py-2 text-center text-sm font-medium text-white hover:bg-emerald-500">
+            📝 Sign Up
           </Link>
         </div>
-
-        <p className="mt-6 text-center text-sm text-slate-400">
-          Already have an account?{' '}
-          <Link href="/login" className="text-sky-400 hover:text-sky-300">
-            Sign in here
-          </Link>
-        </p>
       </div>
     </div>
   );

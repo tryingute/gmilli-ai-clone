@@ -1,18 +1,10 @@
-import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import './globals.css';
-
-const inter = Inter({ subsets: ['latin'] });
-
-export const metadata: Metadata = {
-  title: 'Gmilli AI Trading Assistant',
-  description: 'AI-powered trading analysis and automation platform',
-};
-
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export function GmilliLogo() {
   return (
-    <html lang="en">
-      <body className={`${inter.className} bg-slate-950 text-white antialiased`}>{children}</body>
-    </html>
+    <div className="flex items-center gap-3">
+      <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-sky-500 font-bold text-white">D</div>
+      <span className="bg-gradient-to-r from-sky-400 to-blue-500 bg-clip-text text-xl font-bold text-transparent">
+        Deriv Index Trader
+      </span>
+    </div>
   );
 }
