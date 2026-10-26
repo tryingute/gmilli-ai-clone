@@ -11,10 +11,10 @@ export default function HomePage() {
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
           <Link href="/" className="flex items-center gap-3">
             <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-sky-500 text-lg font-bold text-white">
-              D
+              F
             </div>
             <span className="bg-gradient-to-r from-sky-400 to-blue-500 bg-clip-text text-xl font-bold text-transparent">
-              Deriv Index Trader
+              Fumjamx
             </span>
           </Link>
 
@@ -40,7 +40,7 @@ export default function HomePage() {
             Deriv volatility indices only
           </div>
           <h1 className="mx-auto max-w-4xl text-5xl font-black tracking-tight text-white md:text-6xl">
-            Deriv Index Trading Bot
+            Fumjamx Deriv Index Trader
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-slate-300">
             Monitor R_10, R_25, R_50, R_75, and R_100 with live signal generation, market timing, and automated index-focused analysis.

@@ -23,7 +23,7 @@ export default function LoginPage() {
       <nav className="mx-auto mb-8 max-w-5xl rounded-xl border border-slate-700 bg-slate-900/80 px-6 py-4">
         <div className="flex items-center justify-between">
           <Link href="/" className="text-2xl font-bold text-sky-400">
-            Deriv Index Trader
+            Fumjamx
           </Link>
           <div className="flex items-center gap-4">
             <Link href="/" className="text-slate-300 hover:text-sky-300">Home</Link>
@@ -39,7 +39,7 @@ export default function LoginPage() {
 
         <div className="mb-6 rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-4 text-sm text-emerald-300">
           <div className="mb-1 font-semibold">✅ Deriv Index Access Ready</div>
-          <div>Access the index monitor and strategy dashboard.</div>
+          <div>Access the Fumjamx index monitor and strategy dashboard.</div>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-5">

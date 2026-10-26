@@ -21,7 +21,7 @@ export default function DashboardPage() {
     <div className="min-h-screen bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.10),_transparent_35%),linear-gradient(135deg,#020817,#0f172a_50%,#111827)] text-white">
       <header className="border-b border-sky-500/20 bg-slate-900/80 backdrop-blur-xl">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-          <div className="text-2xl font-bold text-sky-400">Deriv Index Dashboard</div>
+          <div className="text-2xl font-bold text-sky-400">Fumjamx Dashboard</div>
           <nav className="flex items-center gap-4">
             <button className="rounded-lg px-4 py-2 text-slate-300 hover:text-sky-300">Profile</button>
             <button className="rounded-lg bg-red-600 px-4 py-2 text-white hover:bg-red-500">Logout</button>
