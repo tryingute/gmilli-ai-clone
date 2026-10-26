@@ -1,34 +1,33 @@
-# Fumjamx
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-A focused trading dashboard for Deriv volatility indices only.
+:root {
+  color-scheme: dark;
+}
 
-## Included instruments
+html {
+  scroll-behavior: smooth;
+}
 
-- R_10
-- R_25
-- R_50
-- R_75
-- R_100
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #020817 0%, #0b1120 30%, #111827 100%);
+  color: #e2e8f0;
+  font-family: Arial, Helvetica, sans-serif;
+}
 
-## Features
+* {
+  box-sizing: border-box;
+}
 
-- live index market snapshot panel
-- automated signal generation engine
-- dashboard balance and P&L tracking
-- analyzer screen for strategy review
-- simulation-based trading workflow for Deriv volatility indices
+button,
+input,
+select {
+  font: inherit;
+}
 
-## Run locally
-
-```bash
-npm install
-npm run dev
-```
-
-Then open http://localhost:3000
-
-## Project structure
-
-- `src/app` – page routes
-- `src/components` – reusable UI blocks
-- `src/lib` – trading logic and market simulation
+::selection {
+  background: rgba(59, 130, 246, 0.45);
+}
