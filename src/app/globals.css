@@ -1,33 +1,18 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import './globals.css';
 
-:root {
-  color-scheme: dark;
-}
+const inter = Inter({ subsets: ['latin'] });
 
-html {
-  scroll-behavior: smooth;
-}
+export const metadata: Metadata = {
+  title: 'Gmilli AI Trading Assistant',
+  description: 'AI-powered trading analysis and automation platform',
+};
 
-body {
-  margin: 0;
-  min-height: 100vh;
-  background: linear-gradient(135deg, #020817 0%, #111827 50%, #0f172a 100%);
-  color: #e2e8f0;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-button,
-input,
-select {
-  font: inherit;
-}
-
-::selection {
-  background: rgba(59, 130, 246, 0.45);
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="en">
+      <body className={`${inter.className} bg-slate-950 text-white antialiased`}>{children}</body>
+    </html>
+  );
 }

@@ -1,26 +1,33 @@
-# Gmilli AI Trading Assistant
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-A modern Next.js trading assistant UI for market analysis, risk monitoring, and AI-style signal generation.
+:root {
+  color-scheme: dark;
+}
 
-## Getting started
+html {
+  scroll-behavior: smooth;
+}
 
-```bash
-npm install
-npm run dev
-```
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #020817 0%, #111827 50%, #0f172a 100%);
+  color: #e2e8f0;
+  font-family: Arial, Helvetica, sans-serif;
+}
 
-Then open http://localhost:3000
+* {
+  box-sizing: border-box;
+}
 
-## Features
+button,
+input,
+select {
+  font: inherit;
+}
 
-- Landing page with product positioning
-- Login and signup flows
-- Trading dashboard with tabs
-- Analyzer page for market strategies
-- Simulated live market data and notifications
-
-## Project structure
-
-- `src/app` – app routes and pages
-- `src/components` – reusable interface blocks
-- `src/lib` – helper functions and simulated live services
+::selection {
+  background: rgba(59, 130, 246, 0.45);
+}

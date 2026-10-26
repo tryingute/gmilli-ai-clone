@@ -1,10 +1,39 @@
-export function GmilliLogo() {
-  return (
-    <div className="flex items-center gap-3">
-      <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-sky-500 font-bold text-white">G</div>
-      <span className="bg-gradient-to-r from-sky-400 to-blue-500 bg-clip-text text-xl font-bold text-transparent">
-        Gmilli AI
-      </span>
-    </div>
-  );
+export class LiveNotificationService {
+  private listeners = new Map<string, Array<(...args: unknown[]) => void>>();
+
+  on(event: string, callback: (...args: unknown[]) => void) {
+    const eventListeners = this.listeners.get(event) ?? [];
+    this.listeners.set(event, [...eventListeners, callback]);
+  }
+
+  off(event: string, callback: (...args: unknown[]) => void) {
+    const eventListeners = this.listeners.get(event) ?? [];
+    this.listeners.set(
+      event,
+      eventListeners.filter((listener) => listener !== callback),
+    );
+  }
+
+  emit(event: string, payload?: unknown) {
+    const eventListeners = this.listeners.get(event) ?? [];
+    eventListeners.forEach((callback) => callback(payload));
+  }
+}
+
+export const liveNotificationService = new LiveNotificationService();
+
+export interface NotificationMessage {
+  id: string;
+  message: string;
+  type: 'info' | 'success' | 'warning' | 'error';
+  timestamp: string;
+}
+
+export function createMockNotification(message: string, type: NotificationMessage['type'] = 'info'): NotificationMessage {
+  return {
+    id: `notification-${Date.now()}-${Math.random().toString(16).slice(2, 8)}`,
+    message,
+    type,
+    timestamp: new Date().toISOString(),
+  };
 }
